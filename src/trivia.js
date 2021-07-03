@@ -3,6 +3,7 @@ import axios from "axios";
 import Intro from "./intro";
 import Game from "./game";
 import Results from "./results";
+import he from "he";
 
 const steps = {
     INTRO: "intro",
@@ -15,22 +16,21 @@ const App = () => {
     const [questions, setQuestions] = useState([])
 
     const onBegin = async () => {
-        const questions = await axios.get("https://opentdb.com/api.php?amount=10&difficulty=hard&type=boolean")
-        setQuestions(questions.data.results)
-        setStep(steps.GAME)
-    }
+        const response = await axios.get("https://opentdb.com/api.php?amount=10&difficulty=hard&type=boolean")
+        const data = response.data.results
 
-    const onAnswer = (id, answer) => {
-        const question = questions[id]
-        question.answer = answer
-        //setQuestions(questions) TODO: test without this
+        setQuestions(data.map(q => ({
+            ...q,
+            question: he.decode(q.question)
+        })))
+        setStep(steps.GAME)
     }
 
     switch (step) {
         case steps.INTRO:
             return <Intro onBegin={onBegin} />
         case steps.GAME:
-            return <Game questions={questions} onAnswer={onAnswer} onFinish={() => setStep(steps.RESULTS)} />
+            return <Game questions={questions} onFinish={() => setStep(steps.RESULTS)} />
         case steps.RESULTS:
             return <Results questions={questions} onRestart={() => setStep(steps.INTRO)} />
     }
