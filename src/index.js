@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import Trivia from "./trivia";
+import App from "./app"
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Trivia />
-  </React.StrictMode>,
+    <React.StrictMode>
+        <App />
+    </React.StrictMode>,
   document.getElementById('root')
 );
 

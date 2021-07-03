@@ -1,4 +1,4 @@
-import {useState} from "react";
+import { useState } from "react";
 
 const Question = ({ question, progress, onAnswer }) => {
     return <div>
