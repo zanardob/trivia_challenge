@@ -1,4 +1,4 @@
-import styles from "./trivia.module.css"
+import styles from "../trivia.module.css"
 
 const Intro = ({ onBegin }) => {
     return <>

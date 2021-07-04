@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "./trivia.module.css"
+import styles from "../trivia.module.css"
 
 const Question = ({ question, progress, onAnswer }) => {
     const answerQuestion = answer => {

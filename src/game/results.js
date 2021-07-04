@@ -1,4 +1,4 @@
-import styles from "./trivia.module.css"
+import styles from "../trivia.module.css"
 
 const Results = ({ questions, onRestart }) => {
     const isAnswerCorrect = question => question.correct_answer === question.user_answer

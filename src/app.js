@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Intro from "./intro";
-import Game from "./game";
-import Results from "./results";
+import Intro from "./game/intro";
+import Game from "./game/game";
+import Results from "./game/results";
 import fetchQuestions from "./triviaAPI"
 import styles from "./trivia.module.css"
 
