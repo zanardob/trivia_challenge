@@ -16,7 +16,7 @@ const Results = ({ questions, onRestart }) => {
     }
 
     return <>
-        <h3>{"You scored "}{computeScore()}{" / "}{questions.length}</h3>
+        <h1>{"You scored "}{computeScore()}{" / "}{questions.length}</h1>
 
         <div className={styles.content}>
             {questions.map(q => <QuestionResult key={q.question} question={q} isCorrect={isAnswerCorrect(q)} />)}

@@ -8,7 +8,7 @@ const Question = ({ question, progress, onAnswer }) => {
     }
 
     return <>
-        <h3>{question.category}</h3>
+        <h1>{question.category}</h1>
 
         <div className={styles.content}>
             <div className={styles.questionBox}>

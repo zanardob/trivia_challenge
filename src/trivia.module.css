@@ -1,13 +1,18 @@
-* {
-    font-size: 24px;
+html {
+    font-size: 100%;
     color: #212121;
+    background-color: #BCBCBC;
+    word-break: break-word;
 }
 
-h3 {
+h1 {
     text-align: center;
     margin: 0;
-    padding: 0 0 48px 0;
-    font-size: 32px;
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1.5em;
 }
 
 Button {
@@ -17,16 +22,15 @@ Button {
     overflow: hidden;
     outline: none;
     cursor: pointer;
-
     color: #333333;
-    font-size: 22px;
+    font-size: 1.8em;
 }
 
 .mainContainer {
     display: flex;
     justify-content: center;
-
-    background-color: #BCBCBC;
+    align-items: stretch;
+    max-width: 100vw;
     min-height: 100vh;
 }
 
@@ -35,14 +39,18 @@ Button {
     flex-flow: column nowrap;
     justify-content: space-between;
     align-items: center;
-
     background-color: #E0E0E0;
     border-radius: 5px;
-    margin: 32px;
-    padding: 32px;
-    width: 60vw;
-    min-width: 300px;
-    min-height: 100%;
+    margin: 1em 0;
+    padding: 1.5em 2em;
+    width: 50vw;
+    min-width: 18rem;
+}
+
+@media (max-width: 60em) {
+    .gameContainer {
+        width: 70vw;
+    }
 }
 
 .content {
@@ -50,27 +58,24 @@ Button {
     flex-flow: column nowrap;
     text-align: center;
     align-items: stretch;
+    justify-content: center;
+    flex-grow: 1;
+    padding: 1em;
+    width: 100%;
 }
 
 .questionBox {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
-
     border: 1px solid black;
     border-radius: 3px;
-    margin: 32px 32px 0 32px;
-    padding: 32px;
-    min-height: 150px;
-    vertical-align: middle;
-}
-
-.actionArea {
-    margin-top: 48px;
+    padding: 1em;
+    min-height: 15em;
 }
 
 .actionArea > *:last-child {
-    margin-left: 24px;
+    margin-left: 1.6em;
 }
 
 .actionArea > *:only-child {
@@ -81,17 +86,15 @@ Button {
     display: flex;
     align-items: center;
     text-align: left;
-
-    font-size: 24px;
-    margin: 8px 0;
-    padding: 12px;
     border-radius: 3px;
+    margin: 0.3em 0;
+    padding: 0.6em;
 }
 
 .answer {
     text-align: center;
     color: #333333;
-    font-size: 22px;
+    font-size: 1.5em;
     flex-grow: 0;
     flex-shrink: 0;
     min-width: 80px;
@@ -101,11 +104,12 @@ Button {
     flex-grow: 1;
     flex-shrink: 1;
 
+    font-size: 1.5em;
     padding-left: 24px;
 }
 
 .correct {
-    background-color: #cae5ac;
+    background-color: #c0e399;
 }
 
 .incorrect {
