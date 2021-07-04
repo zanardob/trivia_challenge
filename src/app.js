@@ -2,7 +2,7 @@ import { useState } from "react";
 import Intro from "./intro";
 import Game from "./game";
 import Results from "./results";
-import getQuestions from "./triviaAPI"
+import fetchQuestions from "./triviaAPI"
 import styles from "./trivia.module.css"
 
 const steps = {
@@ -16,7 +16,7 @@ const App = () => {
     const [questions, setQuestions] = useState([])
 
     const onBegin = async () => {
-        const result = await getQuestions()
+        const result = await fetchQuestions()
         setQuestions(result)
         setStep(steps.GAME)
     }

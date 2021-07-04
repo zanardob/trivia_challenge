@@ -1,7 +1,7 @@
 import axios from "axios";
 import he from "he";
 
-const getQuestions = async () => {
+const fetchQuestions = async () => {
     let response
     try {
         response = await axios.get("https://opentdb.com/api.php?amount=10&difficulty=hard&type=boolean")
@@ -18,4 +18,4 @@ const getQuestions = async () => {
     }))
 }
 
-export default getQuestions;
+export default fetchQuestions;
