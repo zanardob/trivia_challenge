@@ -1,6 +1,33 @@
+* {
+    font-size: 24px;
+    color: #212121;
+}
+
+h3 {
+    text-align: center;
+    margin: 0;
+    padding: 0 0 48px 0;
+    font-size: 32px;
+}
+
+Button {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    overflow: hidden;
+    outline: none;
+    cursor: pointer;
+
+    color: #333333;
+    font-size: 22px;
+}
+
 .mainContainer {
     display: flex;
     justify-content: center;
+
+    background-color: #BCBCBC;
+    min-height: 100vh;
 }
 
 .gameContainer {
@@ -9,20 +36,20 @@
     justify-content: space-between;
     align-items: center;
 
-    margin-top: 32px;
-    padding: 32px;
     background-color: #E0E0E0;
-    width: 50vw;
-    min-width: 350px;
-    max-width: 500px;
-    min-height: 600px;
+    border-radius: 5px;
+    margin: 32px;
+    padding: 32px;
+    width: 60vw;
+    min-width: 300px;
+    min-height: 100%;
 }
 
 .content {
     display: flex;
     flex-flow: column nowrap;
-    align-items: center;
     text-align: center;
+    align-items: stretch;
 }
 
 .questionBox {
@@ -31,6 +58,7 @@
     justify-content: center;
 
     border: 1px solid black;
+    border-radius: 3px;
     margin: 32px 32px 0 32px;
     padding: 32px;
     min-height: 150px;
@@ -51,43 +79,35 @@
 
 .result {
     display: flex;
-    width: 100%;
     align-items: center;
     text-align: left;
+
     font-size: 24px;
+    margin: 8px 0;
+    padding: 12px;
+    border-radius: 3px;
 }
 
-.result > *:first-child {
-    font-size: 36px;
+.answer {
     text-align: center;
-    padding: 8px 0;
-    min-width: 42px;
-    margin: 0;
-}
-
-.result > *:last-child {
-    padding-left: 16px;
-}
-
-h3 {
-    margin: 0;
-    padding: 0 0 48px 0;
-    font-size: 32px;
-    text-align: center;
-}
-
-p {
-    font-size: 24px;
-}
-
-Button {
-    background-color: transparent;
-    background-repeat: no-repeat;
-    border: none;
-    overflow: hidden;
-    outline: none;
-    cursor: pointer;
-
     color: #333333;
     font-size: 22px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    min-width: 80px;
+}
+
+.question {
+    flex-grow: 1;
+    flex-shrink: 1;
+
+    padding-left: 24px;
+}
+
+.correct {
+    background-color: #cae5ac;
+}
+
+.incorrect {
+    background-color: #f3b9bd;
 }

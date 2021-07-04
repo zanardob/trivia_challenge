@@ -32,7 +32,7 @@ const Game = ({ questions, onFinish }) => {
         else onFinish()
     }
 
-    return <Question question={questions[index]} progress={`${index} of ${questions.length}`} onAnswer={onAnswer} />
+    return <Question question={questions[index]} progress={`${index + 1} of ${questions.length}`} onAnswer={onAnswer} />
 }
 
 export default Game;
