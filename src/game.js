@@ -1,25 +1,33 @@
 import { useState } from "react";
+import styles from "./trivia.module.css"
 
 const Question = ({ question, progress, onAnswer }) => {
-    return <div>
+    const answerQuestion = answer => {
+        question.user_answer = answer
+        onAnswer()
+    }
+
+    return <>
         <h3>{question.category}</h3>
 
-        <div>
-            <p>{question.question}</p>
+        <div className={styles.content}>
+            <div className={styles.questionBox}>
+                <p>{question.question}</p>
+            </div>
+            <p>{progress}</p>
         </div>
-        <p>{progress}</p>
 
-        <button onClick={() => onAnswer("True")}>{"TRUE"}</button>
-        <button onClick={() => onAnswer("False")}>{"FALSE"}</button>
-    </div>
+        <div className={styles.actionArea}>
+            <button onClick={() => answerQuestion("True")}>{"TRUE"}</button>
+            <button onClick={() => answerQuestion("False")}>{"FALSE"}</button>
+        </div>
+    </>
 }
 
 const Game = ({ questions, onFinish }) => {
     const [index, setIndex] = useState(0)
 
-    const onAnswer = answer => {
-        questions[index].answer = answer
-
+    const onAnswer = () => {
         if(index < questions.length - 1) setIndex(index + 1)
         else onFinish()
     }

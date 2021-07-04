@@ -1,12 +1,18 @@
+import styles from "./trivia.module.css"
+
 const Intro = ({ onBegin }) => {
-    return <div>
+    return <>
         <h3>{"Welcome to the Trivia Challenge!"}</h3>
 
-        <p>{"You will be presented with 10 True or False questions."}</p>
-        <p>{"Can you score 100%?"}</p>
+        <div className={styles.content}>
+            <p>{"You will be presented with 10 True or False questions."}</p>
+            <p>{"Can you score 100%?"}</p>
+        </div>
 
-        <button onClick={onBegin}>{"BEGIN"}</button>
-    </div>
+        <div className={styles.actionArea}>
+            <button onClick={onBegin}>{"BEGIN"}</button>
+        </div>
+    </>
 }
 
 export default Intro;

@@ -1,9 +1,9 @@
 import { useState } from "react";
-import axios from "axios";
 import Intro from "./intro";
 import Game from "./game";
 import Results from "./results";
-import he from "he";
+import getQuestions from "./triviaAPI"
+import styles from "./trivia.module.css"
 
 const steps = {
     INTRO: "intro",
@@ -16,27 +16,31 @@ const App = () => {
     const [questions, setQuestions] = useState([])
 
     const onBegin = async () => {
-        // TODO: Move this call to its own file
-        const response = await axios.get("https://opentdb.com/api.php?amount=10&difficulty=hard&type=boolean")
-        const data = response.data.results
-
-        setQuestions(data.map(q => ({
-            ...q,
-            question: he.decode(q.question)
-        })))
+        const result = await getQuestions()
+        setQuestions(result)
         setStep(steps.GAME)
     }
 
+    let component
     switch (step) {
         case steps.INTRO:
-            return <Intro onBegin={onBegin} />
+            component = <Intro onBegin={onBegin} />
+            break;
         case steps.GAME:
-            return <Game questions={questions} onFinish={() => setStep(steps.RESULTS)} />
+            component = <Game questions={questions} onFinish={() => setStep(steps.RESULTS)} />
+            break;
         case steps.RESULTS:
-            return <Results questions={questions} onRestart={() => setStep(steps.INTRO)} />
+            component = <Results questions={questions} onRestart={() => setStep(steps.INTRO)} />
+            break;
         default:
             throw new Error("Unknown value for step.")
     }
+
+    return <div className={styles.mainContainer}>
+        <div className={styles.gameContainer}>
+            {component}
+        </div>
+    </div>
 }
 
 export default App;

@@ -1,0 +1,93 @@
+.mainContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.gameContainer {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 32px;
+    padding: 32px;
+    background-color: #E0E0E0;
+    width: 50vw;
+    min-width: 350px;
+    max-width: 500px;
+    min-height: 600px;
+}
+
+.content {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    text-align: center;
+}
+
+.questionBox {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+
+    border: 1px solid black;
+    margin: 32px 32px 0 32px;
+    padding: 32px;
+    min-height: 150px;
+    vertical-align: middle;
+}
+
+.actionArea {
+    margin-top: 48px;
+}
+
+.actionArea > *:last-child {
+    margin-left: 24px;
+}
+
+.actionArea > *:only-child {
+    margin-left: 0;
+}
+
+.result {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    text-align: left;
+    font-size: 24px;
+}
+
+.result > *:first-child {
+    font-size: 36px;
+    text-align: center;
+    padding: 8px 0;
+    min-width: 42px;
+    margin: 0;
+}
+
+.result > *:last-child {
+    padding-left: 16px;
+}
+
+h3 {
+    margin: 0;
+    padding: 0 0 48px 0;
+    font-size: 32px;
+    text-align: center;
+}
+
+p {
+    font-size: 24px;
+}
+
+Button {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    overflow: hidden;
+    outline: none;
+    cursor: pointer;
+
+    color: #333333;
+    font-size: 22px;
+}
