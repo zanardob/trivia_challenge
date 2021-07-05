@@ -24,6 +24,7 @@ p {
 }
 
 Button {
+    position: relative;
     background-color: transparent;
     background-repeat: no-repeat;
     border: none;
@@ -105,6 +106,14 @@ Button {
     padding: 0.6em;
 }
 
+.question {
+    flex-grow: 1;
+    flex-shrink: 1;
+
+    font-size: 1.5em;
+    padding-left: 24px;
+}
+
 .answer {
     text-align: center;
     color: #333333;
@@ -114,14 +123,6 @@ Button {
     width: 90px;
 }
 
-.question {
-    flex-grow: 1;
-    flex-shrink: 1;
-
-    font-size: 1.5em;
-    padding-left: 24px;
-}
-
 .correct {
     background-color: #c0e399;
 }
@@ -129,3 +130,19 @@ Button {
 .incorrect {
     background-color: #f3b9bd;
 }
+
+.loader {
+    border: 4px solid #E0E0E0;
+    border-top: 4px solid #333333;
+    border-radius: 50%;
+    width: 1.1em;
+    height: 1.1em;
+    animation: spin 2s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+

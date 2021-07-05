@@ -2,7 +2,7 @@ import { useState } from "react";
 import styles from "../trivia.module.css"
 
 const Question = ({ question, progress, onAnswer }) => {
-    const answerQuestion = answer => {
+    const handleAnswer = answer => {
         question.user_answer = answer
         onAnswer()
     }
@@ -18,8 +18,8 @@ const Question = ({ question, progress, onAnswer }) => {
         </div>
 
         <div className={styles.actionArea}>
-            <button onClick={() => answerQuestion("True")}>{"TRUE"}</button>
-            <button onClick={() => answerQuestion("False")}>{"FALSE"}</button>
+            <button onClick={() => handleAnswer("True")}>{"TRUE"}</button>
+            <button onClick={() => handleAnswer("False")}>{"FALSE"}</button>
         </div>
     </>
 }
