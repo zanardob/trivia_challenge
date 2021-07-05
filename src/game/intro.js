@@ -33,7 +33,11 @@ const Intro = ({ onBegin }) => {
         </div>
 
         <div className={styles.actionArea}>
-            <button onClick={handleBegin} disabled={isLoading} className={isLoading ? styles.loader : undefined}>{isLoading ? "" : "BEGIN"}</button>
+            <button onClick={handleBegin}
+                    disabled={isLoading}
+                    className={isLoading ? styles.loader : undefined}>
+                {isLoading ? "" : "BEGIN"}
+            </button>
         </div>
     </>
 }
