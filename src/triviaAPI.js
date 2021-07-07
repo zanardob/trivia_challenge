@@ -14,6 +14,9 @@ const fetchQuestions = async () => {
         return false
     }
 
+    const success = response.data.response_code
+    if(success !== 0) return false
+
     const data = response.data.results
     if(data.length === 0) return false
 
